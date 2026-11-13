@@ -11,5 +11,5 @@ Brendan Ketelsen is a junior Honors student and aspiring IT professional. He is 
 
 - [Resume](resume.md)
 - [MA1](coverletter.md)
-- [Reflections](instructions.md)
 - [MA2](proposal.md)
+- [Reflections](instructions.md)
