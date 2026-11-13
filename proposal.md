@@ -3,127 +3,35 @@ layout: default
 title: Proposal
 ---
 
-# Proposal
+# Major Assignment 2 Case Study Report
 
-AI vs. Human Penetration Testing Effectiveness
+By Brendan Ketelsen
 
-Brendan Ketelsen 
+Large language models are often asked questions that leave out key details, and must decide what to assume in order to provide an answer. The central purpose of this study is to examine how an AI LLM fills in these details and what changes as the prompts gain specificity using three everyday tasks: trip planning (as I demonstrated briefly in Development Log 8), recipe selection (as I demonstrated briefly in Development Log 9), and computer purchase recommendation. Each prompt is presented at four different levels of detail, from a completely vague request with no details to a fully specified one. Each different version was run separately with memory disabled, so every response is completely independent. For each response, I recorded the unspecified choices that the AI filled in, along with the model’s own explanation of why it chose them, and evaluated if these choices seemed logical. The study aims to show how a model resolves ambiguity and how far we can trust its self-explanations as evidence for why it behaved as it did.
 
-Information Technology
+The platform I studied is Claude, an AI LLM made by Anthropic, using the Sonnet 5.5 model set to its High effort level for every session. This interface does more than exchange plain text, and in my sessions it displayed clarifying questions as fill-in fields, multi-tab day-by-day itineraries for trips, interactive recipe cards with a servings adjuster and built-in step timers, stock photos pulled from outside sources, and source tags showing where searched information came from. It can also search exterior sources for information, which it chose to do for the majority of my prompts. 
+To conduct my observations, I wrote four prompts of increasing specificity for each of the three tasks. These began as “Plan a trip”, “Give me a recipe”, and “Recommend a laptop”, and were given more specific details after each iteration. Every prompt was entered in a brand new chat with memory disabled, and after each response I sent the exact same follow-up: “You made some choices I didn’t specify. For each one, briefly explain why you chose it.” Using identical wording meant that any differences in the explanations came from the original prompt and not from how I asked. I took screenshots of every response, taking note of what was filled in and which assumptions repeated.
 
----
+An information ecology treats a system of people and technologies as a whole, with the focus on human activity served by technology (Nardi & O’Day, 1999). A conversation with Claude is a small ecology made up of me, the model, the interface, the sources it searches, the review sites behind those sources, and settings such as memory. Additionally, I consider this a participatory platform because every response is a text built by both the user and the system. I supply a prompt and the model supplies a draft. I can push back, ask for revisions, or ask the model to explain itself, and that interaction shapes the final result. The model is also built from the earlier participation of enormous numbers of people who wrote recipes, travel blogs, product reviews, and millions of other posts, so even a single answer carries part of a participatory culture that I never directly interact with. If participation is easy, people on the internet very often will do so (Rheingold, 2012), and using AI is VERY easy, which is likely why the technology has become so widely used so quickly.
+The first thing I wanted to study is how the platform handles a vague request. On the least specific travel and laptop prompts, the interface displayed clarifying questions (shown to the right), but I chose no preference for each one, and the model responses showed that having no preferences meant it would go with an all-around pick. The recipe prompt skipped this gesture, and the model later said it gave a recipe instead of asking first so I would have something to react to. I believe this carries real social meaning: the AI performs the courtesy of asking for clarification, but also aims for quick and safe answers. A simple, satisfying answer is one people return for, and nearly every response ended with an offer to narrow things down if I gave more detail, which shifts the work of correction onto the user. 
 
-Background
+The second thing I looked at is the language of safety that appeared across the vague prompts. The model chose Lisbon for the first three travel prompts, spaghetti aglio e olio for the first recipe prompt, and a MacBook Air as the top laptop pick, and in each case it described the choice as a safe default, widely liked, or the middle of the available options (an example of which is shown below). What I found interesting is that safe does not mean most common. My research showed that Portugal is not even in the top five most visited destinations in the world, so the model was not simply choosing the statistical average. It seems to be choosing whatever is hardest to be wrong about for the widest range of people (affordable, walkable, with something for every travel style). I believe this reflects the ecology it draws from, because the abundant content that participatory culture has produced about these topics is full of enthusiastic, broadly agreeable recommendations. The model admitted that many pages it found were low-quality aggregator or affiliate-driven sites, and in the engineering prompt it said its spec targets came from an Acer page. Since Acer sells laptops, the specs might favor its own products. This means that the “safe” defaults are generally shaped by the content the model reads, not always by actual preferences or objective statistics.
 
-This project aims to systematically evaluate the effectiveness of AI-based penetration
-testing tools relative to experienced human penetration testers across various network
-environments. I will compare performance metrics (vulnerabilities discovered, time, false
-positives, cost, etc.) for AI versus human experts to determine the strengths and
-weaknesses of each approach.
+The third thing I wanted to study is how the reasoning changed with specificity. In the vague prompts, the justifications were about risk, such as assuming no dietary restrictions, which the model admitted was a guess. By the final recipe prompt, nearly every ingredient was tied to a stated requirement: spaghetti because it cooks in about ten minutes, beans for protein without meat or cheese, and an olive oil base because there couldn’t be any dairy. Specificity didn’t just remove assumptions, it actually moved the model from defending guesses to showing it followed instructions. Leftover ambiguity was resolved cautiously and beyond what I asked. A vegetarian request produced a fully vegan curry, and a 1000 dollar budget became about 900 (see the image to the right). The AI acted like a polite service worker who would rather over-deliver than risk a complaint.
 
-Cybersecurity breaches continue to grow in frequency and cost. At the same time, there
-is a global shortage of qualified security professionals. One study reported a 3.4 million
-worker gap in cybersecurity talent (Lake & Suarez, 2022). Recent advances (large
-language models, machine learning, etc.) have enabled AI that can autonomously scan
-networks and suggest exploits. AI excels at repetitive, large-scale tasks such as
-vulnerability scanning and can operate 24/7, unlike humans. Therefore, organizations
-using security AI typically report faster breach detection and lower costs.
+The last thing I examined was the self-explanations, which I found the most revealing. The AI responds conversationally, opening with “Fair point,” listing reasons in the first person, and closing with an offer to redo the answer, just small details that make it feel trustworthy. Some of the content shows where that trust ends. In the final recipe prompt, the model added red pepper flakes because of what it called a flavor preference of its own. A system without the ability to taste somehow claimed to have personal experience with it, and the social interface makes that feel natural instead of strange. At one point, It also said it assumed I was traveling from the US partly because of where I was located, which revealed hidden context I did not know it was using (and very quickly removed). 
 
-However, experts caution that AI lacks human intuition and reasoning. AI can identify
-known patterns, but struggles with complex business logic, novel exploits, or multi-step
-attack chains (Thomas, 2025). A recent industry study observed that an AI testing tool
-called XBOW submitted 1,060 potential issues but only around 10% were confirmed
-valid, creating many false positives and requiring human review (Thomas, 2025).
-Building on this context, my research will rigorously compare AI and human penetration
-testing under realistic conditions to inform the best practices for blending both.
+These are the most important findings that I can come away from this study with:
+- The model’s idea of a safe choice is one that is acceptable for the most people, not the most typical, and that opinion is built from commercial and participatory content the user cannot see. 
+- Specificity changes the kind of reasoning the model gives, from risk management to requirement-matching, so a detailed prompt produces a more easily checkable answer as well as a better one. 
+- Leftover ambiguity is resolved toward caution, so constraints get treated as stricter than I wrote them. 
+Most importantly, the self-explanations should not be treated as a window into the model’s process. They are consistent with the outputs and sometimes impressively honest, but they were produced after the fact by the same system, and they sometimes claim the AI has personal preferences or reveal hidden context. This should matter to anyone studying how people interact online, because these systems now shape many people’s everyday decisions about where to go, what to cook, and what to buy, and the decision-making process stays invisible unless someone asks for it. My follow-up question was a quick way to reveal this process, even if that answer needs skepticism too.
+
+I believe these findings will benefit me academically, professionally, and personally. Academically, I now know that a more specific prompt gives a more focused answer, and that asking an AI to list its assumptions could show where my own thinking was missing. Professionally, I expect to use AI tools, and knowing they quietly choose the cautious option and may overstate their confidence means I will need to check sources before acting on a recommendation. Personally, I will remember that an AI’s friendly, first-person answer still comes from an information ecology with its own incentives, and that safe and best for me are not always the same thing.
 
 ---
 
-Methodology
+Sources
+Nardi, B. A., & O’Day, V. (1999). Information Ecologies: Using Technology with Heart. https://direct.mit.edu/books/book/2686/information-ecologiesusing-technology-with-heart 
 
-Testbed Setup: Build one isolated lab environment that includes a Windows Server
-virtual machine, an Ubuntu Linux Server virtual machine, and a deliberately vulnerable
-web application. Seed a limited set of known vulnerabilities into the environment so
-results can be checked.
-
-AI Tools: Configure one AI tool to perform reconnaissance, vulnerability identification,
-and exploit suggestions against the approved lab network. The tool will receive only the
-authorized scope and credentials.
-
-Human Testers: Recruit four experienced penetration testers or advanced cybersecurity
-students with prior offensive-security experience. Each participant will test the same
-environment for a fixed time using standard tools such as Nmap, Burp Suite, and
-Metasploit. Participants will be compensated for their time.
-
-Data Collection & Metrics: Record the number of unique vulnerabilities found, severity,
-time to first valid finding, false positives, and total time. Findings will be checked against
-the seeded vulnerability list and scored for validity. The comparison will be limited to one
-environment and one testing window so the results are directly comparable.
-
-Ethical and Security Controls: All testing will occur on isolated, on campus networks or
-testbeds with no outside impact. Human participants will sign consent forms, and all
-actions will comply with legal and ethical guidelines. No actual real-world systems will
-be targeted.
-
----
-
-Anticipated Outcomes
-
-I expect the study to show that AI tools greatly accelerate vulnerability detection and
-coverage, consistently finding many low-level flaws quickly. However, I also anticipate
-identifying clear gaps where human expertise remains crucial, such as more creative
-exploits, social engineering and validating the AI findings. Metrics will likely be similar to
-prior findings: AI may achieve higher rates of identified issues per hour but at the
-expense of higher false-positive rates. The expected outcome is a comprehensive
-evaluation that actually measures these trade offs. The project will produce
-recommendations for hybrid testing (i.e. use AI for broad scanning and let humans focus
-on contextual analysis). Ultimately, I aim to develop guidelines on integrating AI into
-penetration testing workflows and to propose new metrics for evaluating efficiency
-across human and AI agents. The results will advance understanding of AI’s role in
-cybersecurity and suggest future research directions in automated offensive security.
-
----
-
-References
-
-Lake, S., & Suarez, J. (2022, October 20). The cybersecurity industry is short 3.4 million workers-that’s good news for cyber wages. Fortune. https://fortune.com/education/articles/the-cybersecurity-industry-is-short-3-4-million-workers-thats-good-news-for-cyber-wages/
-
-Thomas, M. (2025, October 19). Why AI won’t be replacing human penetration testers soon. PGI. https://www.pgitl.com/insights/ai-replacing-human-penetration-testing
-
----
-
-Timeline
-
-Dates and Tasks:
-
-January 1, 2027- Feburary 14, 2027:
-Finalize the project design, build the lab environment, and seed the test vulnerabilities.
-
-February 14, 2027 – March 14, 2027
-Configure the AI tools, finalize scoring rules, and recruit human participants.
-
-March 14, 2027 – April 14, 2027 
-Run the AI and human penetration tests on the same lab environment and collect the results.
-
-April 14, 2027 – May 1, 2027 
-Analyze the findings, compare performance metrics, and draft the final report and poster.
-
----
-
-Budget
-
-Item, Units and Cost, Total
-
-Participant pay: $25/person for 4 people, $100
-
-Digital resources: One Linux Ubuntu VM, one Windows Server VM, and about 20 hours of AWS EC2 computing resources for automated scanning, $350
-
-Hardware: Campus computer lab room rental, 1 1TB external SSD, and 1 8-port switch, $300
-
-Total: $750
-
----
-
-Dissemination
-
-Findings will be submitted as a student poster and report to the Annual Computer Security Applications Conference (ACSAC). 
+Rheingold, H., & Weeks, A. (2012). Net Smart: How to Thrive Online. The MIT Press. http://www.jstor.org/stable/j.ctt7ztdvb 
