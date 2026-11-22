@@ -38,3 +38,7 @@ One challenge was comparing the whole capture to a single TCP stream and calcula
 **Quizzes and Discussions**
 
 The quiz and discussion assignments were also very helpful for filling in the gaps between the major assignments. The discussions were fun for looking into various emerging areas of IT and seeing how they could affect networking now or in the future. I especially appreciated the quizzes, because the multiple-choice practice was extremely helpful for reviewing content before the midterm exam, and I believe my high score on the midterm can largely be credited to the review material in the quizzes.
+
+**Overall Reflection**
+
+I am very interested in the networking field, and I will likely pursue a career in networking post-graduation. My internship last summer solidified this interest, and this course has given me a great foundation I can build on to continue my growth as a student and intern, and eventually enter the professional world as an experienced technician. I am grateful for all of the opportunities this course has provided, and I look forward to continuing my networking coursework next semester.
